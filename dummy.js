@@ -13,7 +13,6 @@ var basepath = process.cwd();
 var dir = path.join(__dirname, "files");
 try { fs.mkdirSync(dir); } catch(e) {}
 
-
 app.use(logit.mw);
 app.use(cors.mw);
 app.use(require('express-formidable')({uploadDir: dir}));
