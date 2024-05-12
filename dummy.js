@@ -20,7 +20,8 @@ app.post('/upload', function(req, res) {
 	console.log(req.files);
 	var f = req.files[Object.keys(req.files)[0]];
 	var newpath = path.join(dir, f.name);
-	fs.renameSync(f.path, newpath);
+	var x = f.path
+	fs.renameSync(x, newpath);
 	console.log("moved " + f.path + " to " + newpath);
 	res.end("wrote to " + f.name);
 });
